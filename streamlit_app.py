@@ -17,6 +17,9 @@ if uploaded_file is not None:
 
     st.markdown('### アクセスログ（先頭5件）')
     st.write(df.head(5))
+    st.map(df)
+    my_bar=st.progress(20)
+    my_bar.progress(20)
 
     usecols = st.multiselect(
         '何番目の列を解析の対象にしますか？',
@@ -42,9 +45,6 @@ if uploaded_file is not None:
             ['Remote Host', 'Time', 'Request', 'Status', 'Size', 'User Agent', 'Response Time'],
             #default_names, 
             help=help_txt)
-    st.map(df)
-    my_bar=st.progress(20)
-    my_bar.progress(20)
 
     if len(usecols) == 0 or len(names) == 0:
         st.error('解析対象の列が指定されていません。')
