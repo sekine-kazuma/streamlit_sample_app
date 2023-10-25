@@ -21,6 +21,9 @@ if uploaded_file is not None:
         '何番目の列を解析の対象にしますか？',
         [0, 3, 4, 5, 6],
         [0, 3, 4, 5, 6])
+
+if len(usecols) == 0 or len(names) == 0:
+    st.error('解析対象の列が指定されていません。')
     
     help_txt = '''
         以下のフォーマット文字列を解析可能です。詳細については、[公式ページ](https://httpd.apache.org/docs/2.4/ja/mod/mod_log_config.html)を参照して下さい。
@@ -41,5 +44,3 @@ if uploaded_file is not None:
         ['Remote Host', 'Time', 'Request', 'Status', 'Size', 'User Agent', 'Response Time'],
         help=help_txt)
 
-if len(usecols) == 0 or len(names) == 0:
-    st.error('解析対象の列が指定されていません。')
