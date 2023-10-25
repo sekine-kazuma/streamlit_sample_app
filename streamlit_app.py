@@ -9,7 +9,8 @@ uploaded_file = st.file_uploader("アクセスログをアップロードして�
 if uploaded_file is not None:
     df = pd.read_csv(
         uploaded_file,
-        sep=r'\s(?=(?:[^"]*"[^"]*")*[^"]*$)(?![^\[]*\])',
+        # sep=r'\s(?=(?:[^"]*"[^"]*")*[^"]*$)(?![^\[]*\])',
+        sep=','
         engine='python',
         na_values='-',
         header=None)
