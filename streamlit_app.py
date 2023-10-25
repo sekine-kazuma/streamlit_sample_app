@@ -10,7 +10,7 @@ if uploaded_file is not None:
     df = pd.read_csv(
         uploaded_file,
         # sep=r'\s(?=(?:[^"]*"[^"]*")*[^"]*$)(?![^\[]*\])',
-        sep=','
+        sep=',',
         engine='python',
         na_values='-',
         header=None)
